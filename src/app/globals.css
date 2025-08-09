@@ -12,6 +12,21 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@theme {
+  --animate-blink: blink 1.5s infinite step-end;
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

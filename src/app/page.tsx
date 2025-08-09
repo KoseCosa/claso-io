@@ -1,9 +1,9 @@
-import Image from "next/image";
+import TypeWriter from "./components/typewriter/typewriter";
 
 export default function Home() {
   return (
     <div className="text-4xl font-sans grid items-center justify-items-center min-h-screen min-w-screen">
-     <h1>Coming Soon...</h1>
+      <TypeWriter text={"Coming soon..."} /> 
     </div>
   );
 }
