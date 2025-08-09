@@ -4,22 +4,26 @@ import { useEffect, useState } from "react";
 
 type Props  = {
   text: string;
-  speed?: number; // Optional speed prop to control typing speed
+  speed?: number;
 }
 
-export default function TypeWriter({text, speed=150}: Props) {
+export default function TypeWriter({text, speed=100}: Props) {
   const [displayedText, setDisplayedText] = useState("");
-  const [index, setIndex] = useState(0);
+
+
   useEffect(() => {
+    let index = 0;
+    setDisplayedText("");
     const interval = setInterval(() => {
       if (index <= text.length) {
         setDisplayedText(() => text.slice(0, index));
-        setIndex((prevIndex) => prevIndex + 1);
+        index ++;
       } else {
         clearInterval(interval);
       }
     }, speed);
     return () => clearInterval(interval);
-  }, [text, index]);
-  return (<h1>{displayedText}<span className={index >= text.length ? "font-bold text-cyan-400 animate-blink font" : "font-bold text-cyan-400" }>|</span></h1>);
+  }, [text]);
+
+  return (<h1>{displayedText}<span aria-hidden="true" className={`font-bold text-cyan-400 ${displayedText.length >= text.length ? "animate-blink": ""}`}>|</span></h1>);
 }
