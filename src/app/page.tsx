@@ -1,9 +1,9 @@
-import TypeWriter from "./components/typewriter/typewriter";
+import TypeWriter from "./components/Typewriter";
 
 export default function Home() {
   return (
-    <div className="text-4xl font-mono grid items-center justify-items-center min-h-screen min-w-screen">
-      <TypeWriter text={"Coming Soon..."} /> 
-    </div>
+    <section className="text-4xl flex flex-col flex-grow items-center justify-center">
+      <TypeWriter text={"Coming Soon..."}/>
+    </section>
   );
 }

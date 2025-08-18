@@ -25,5 +25,5 @@ export default function TypeWriter({text, speed=100}: Props) {
     return () => clearInterval(interval);
   }, [text]);
 
-  return (<h1>{displayedText}<span aria-hidden="true" className={`font-bold text-cyan-400 ${displayedText.length >= text.length ? "animate-blink": ""}`}>|</span></h1>);
+  return (<h1>{displayedText}<span aria-hidden="true" className={`font-bold text-cyan-500 ${displayedText.length >= text.length ? "animate-blink": ""}`}>|</span></h1>);
 }
