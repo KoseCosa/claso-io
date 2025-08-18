@@ -7,7 +7,7 @@ type Props  = {
   speed?: number;
 }
 
-export default function TypeWriter({text, speed=100}: Props) {
+export default function Typewriter({text, speed=100}: Props) {
   const [displayedText, setDisplayedText] = useState("");
 
 
@@ -23,7 +23,7 @@ export default function TypeWriter({text, speed=100}: Props) {
       }
     }, speed);
     return () => clearInterval(interval);
-  }, [text]);
+  }, [text, speed]);
 
   return (<h1>{displayedText}<span aria-hidden="true" className={`font-bold text-cyan-500 ${displayedText.length >= text.length ? "animate-blink": ""}`}>|</span></h1>);
 }
